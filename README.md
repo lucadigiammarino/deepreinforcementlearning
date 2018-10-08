@@ -28,9 +28,23 @@ According to Deep Mind a Convolutional Neural Network can overcome these challen
 
 If you are not familiar with these basic concepts of Reinforcement Learning check the [Sutton and Burton Book - free pdf](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf).
 
-## Preprocessing
+## Preprocessing - Reducing input dimension (less training time)
 
-Input frames have been pre-processed before since working with raw Atari images could be computational demanding (250 * 160). Therefore, the colour input has first been converted to grayscale. After, the image has been cropped since most of the upper background was useless for the agent to maximise his reward (this reduced the image to 120 * 160). Finally, the frame has been reduced further to a square input of 50 * 50 according to the CNN’s implementation. As mentioned previously the last 4 frames are stack together as a single input, hence the volume is composed by 50 * 50 * 4. The implemented ```crop_frame.py``` file allowed to perfectly remove the unnecessary and test a right resolution of the input image [Preprocessing Gopher Atari Input] ().
+Input frames have been pre-processed before since working with raw Atari images could be computational demanding (250 * 160). Therefore, the colour input has first been converted to grayscale. After, the image has been cropped since most of the upper background was useless for the agent to maximise his reward (this reduced the image to 120 * 160). Finally, the frame has been reduced further to a square input of 50 * 50 according to the CNN’s implementation. As mentioned previously the last 4 frames are stack together as a single input, hence the volume is composed by 50 * 50 * 4. The implemented ```crop_frame.py``` file allowed to perfectly remove the unnecessary and test a right resolution of the input image. 
+
+![Preprocessing Gopher Atari Input](pic.png)
+
+## Train
+Run simply the ```dqn.py``` file. Carefull to the dependecies, this version of code uses ```Python 3.6``` and ```Tensorflow 1.5```. **Download** all the packages you see imported in this file.
+
+## Results (after 6 hours of training)
+
+(Insert video)
+
+## Plot graphs
+
+To plot graphs with ```matplotlib```, download the ```.csv``` files from ```tensorboard``` and use the following file ```plot_results_from_csv.py```. 
+ 
 
 
 
